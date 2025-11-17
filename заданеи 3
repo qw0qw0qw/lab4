@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+  setlocale(LC_CTYPE, "RUS");
+  int num;
+  int last_num;
+  int second_num;
+  int first_num;
+  int sum_num;
+  int reverse;
+
+  printf("Введите целое трехзначное число: ");
+  scanf("%d", &num);
+  getchar();
+
+  first_num = num / 100;
+  second_num = num / 10 - first_num * 10;
+  last_num = num - first_num * 100 - second_num * 10;
+  sum_num = first_num + second_num + last_num;
+  reverse = last_num * 100 + second_num * 10 + first_num;
+  printf(" 1 цфира числа: %d \n 2 цифра числа: %d \n 3 цифра числа: %d \n сумма цифр данного числа: %d \n число наоборот: %d", first_num, second_num, last_num, sum_num, reverse);
+}
