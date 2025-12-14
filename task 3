@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+	setlocale(LC_CTYPE, "RUS");
+	int num;
+	int poslednya;
+	int vtoraya;
+	int pervaya;
+	int summa;
+	int naoborot;
+
+	printf("Введите число: ");
+	scanf("%d", &num);
+	
+
+	pervaya = num / 100;
+	vtoraya = (num / 10) % 10;
+	poslednya = num % 100 % 10;
+	summa = pervaya + vtoraya + poslednya;
+	naoborot = poslednya * 100 + vtoraya * 10 + pervaya;
+	printf("Первая цифра числа: %d \nВторая цифра числа: %d \nТретья цифра числа: %d \nСумма цифр данного числа: %d \nЧисло наоборот: %d", pervaya, vtoraya, poslednya, summa, naoborot);
+}
