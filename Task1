@@ -1,0 +1,35 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include<locale.h>
+#include <math.h>
+
+
+int main() {
+
+	setlocale(LC_CTYPE, "RUS");
+
+	char c;
+	int i;
+	float f;
+	double d;
+
+
+	printf("Введите символ: ");
+	scanf("%c", &c);
+
+	printf("Введите целое число: ");
+	scanf("%i", &i);
+
+	printf("Введите число с плавающей точкой: ");
+	scanf("%f", &f);
+
+	printf("Введите число вида  \"5e-12\": ");
+	scanf("%lf", &d);
+	
+
+	int levo = (int)f;
+	float pravo = f - levo;
+
+	printf("Целая часть вещ. числа: %d \n",levo);
+	printf("Дробная часть вещ. числа: %.4f \nДесятичный код символа: %d \nШестнадцатиричный код символа: %x \n1/i: %f", pravo, c, c, 1.0 / i);
+}
